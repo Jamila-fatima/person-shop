@@ -1,0 +1,8 @@
+.Person{
+    background-color: cadetblue;
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
