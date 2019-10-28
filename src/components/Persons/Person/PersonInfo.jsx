@@ -22,7 +22,7 @@ export default function PersonInfo(props) {
         </Card.Text>
 
         <ButtonGroup aria-label="Basic example">
-          <Button variant="light"><FontAwesomeIcon className="text-info" icon={faEdit} /></Button>
+          <Button variant="light" onClick={props.editButtonClick}><FontAwesomeIcon className="text-info" icon={faEdit} /></Button>
           <Button variant="light" ><FontAwesomeIcon className="text-danger" icon={faTrash} /></Button>
         </ButtonGroup>
 
@@ -32,3 +32,7 @@ export default function PersonInfo(props) {
 
   )
 }
+// PersonInfo.propTypes={
+//   person:PropType.object,
+//   editButton:PropType.func
+// }

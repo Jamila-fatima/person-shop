@@ -8,29 +8,35 @@ export default function Persons() {
             name: "Jamila",
             age: 22,
             discription: "react developer ",
-            isEditMode:false
+            isEditMode: false
         },
         {
             name: "Areeba",
             age: 22,
             discription: "WP developer ",
-            isEditMode:true
+            isEditMode: true
         },
 
         {
             name: "Iqra",
             age: 22,
             discription: "react developer ",
-            isEditMode:false
+            isEditMode: false
         }
-    ]
+    ];
+    let enableEdit = () => {
+        alert("hi am your grandfather");
+        // props.person=true;
+    }
 
 
     return (
         <div className="Persons">
-        
+
             {
-                personsData.map(person => <Person person={person} />)
+                personsData.map(person => <Person 
+                    person={person}
+                    caller={enableEdit} />)
             }
         </div>
     );

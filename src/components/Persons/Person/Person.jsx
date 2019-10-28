@@ -12,7 +12,8 @@ export default function Person(props) {
        
         {
             props.person.isEditMode ? <PersonEdit person={props.person}/> 
-            : <PersonInfo person={props.person}/>}
+            : <PersonInfo person={props.person}
+            editButtonClick={props.caller}/>}
         }
         
 
@@ -22,5 +23,7 @@ export default function Person(props) {
 }
 
 Person.propTypes = {
-    isEditMode: PropType.bool,
+    person:PropType.object,
+    
+ 
 }
