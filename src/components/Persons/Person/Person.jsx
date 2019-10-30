@@ -13,7 +13,9 @@ export default function Person(props) {
         {
             props.person.isEditMode ? <PersonEdit person={props.person}/> 
             : <PersonInfo person={props.person}
-            editButtonClick={props.caller}/>}
+            editButtonClick={props.caller}
+            disableButtonClick={props.disableCaller}
+            />}
         }
         
 
