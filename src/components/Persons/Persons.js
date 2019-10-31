@@ -19,7 +19,7 @@ export default class Persons extends Component {
                     name: "Areeba",
                     age: 22,
                     discription: "WP developer ",
-                    isEditMode: true
+                    isEditMode: false
                 },
 
                 {
@@ -31,35 +31,32 @@ export default class Persons extends Component {
             ]
         }
     }
-
-
-    disableEdit = (personClick) => {
-       this.setState({
-        personsData: this.state.personsData.map( 
-
-            pInner => {
-                    if (pInner.name === personClick.name) {
-                               pInner.isEditMode= false;         
-                    }
-                    return pInner;
-                })
+    deletingPerson = (p) => {
+        this.setState({
+          personsData: this.state.personsData.filter(function (person) {
+            return person.name !== p.name;
+          }
+          )
         })
+      }
 
-    }
+
+
 
     enableEdit = (personClick) => {
-        
+
         this.setState({
             personsData: this.state.personsData.map(
                 pInner => {
                     if (pInner.name === personClick.name) {
-                               pInner.isEditMode= true;         
+                        pInner.isEditMode = true;
                     }
                     return pInner;
                 })
         })
 
     }
+   
 
     render() {
         return (
@@ -68,14 +65,12 @@ export default class Persons extends Component {
                 {
                     this.state.personsData.map(person => {
                         return <Person person={person}
-                            caller={ () =>
+                            caller={() =>
                                 this.enableEdit(person)
 
                             }
-                            disableCaller={ () =>
-                                this.disableEdit(person)
-                            }
-                            />
+                            deletePerson={() => this.deletingPerson(person)}
+                        />
                     })
                 }
             </div>

@@ -23,7 +23,7 @@ export default function PersonInfo(props) {
 
         <ButtonGroup aria-label="Basic example">
           <Button variant="light" onClick={props.editButtonClick}><FontAwesomeIcon className="text-info" icon={faEdit} /></Button>
-          <Button variant="light" onClick={props.disableButtonClick}><FontAwesomeIcon className="text-danger" icon={faTrash} /></Button>
+          <Button variant="light" onClick={props.deletePerson}><FontAwesomeIcon className="text-danger" icon={faTrash} /></Button>
         </ButtonGroup>
 
 
